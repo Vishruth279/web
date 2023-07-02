@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Demo</title>
+</head>
+<body>
+  <button id="clickButton">Click Me</button>
+  <button id="mouseOverDiv">Mouse Over Me</button>
+  <button id="mouseOutDiv">Mouse Out Me</button>
+  <input type="text" id="changeInput" placeholder="Type something">
+  <input type="text" id="keyDownInput" placeholder="Press a key">
+
+  <script>
+    function onClickHandler() {
+      alert("onClick event triggered");
+    }
+
+    function onMouseOverHandler() {
+      alert("onMouseOver event triggered");
+    }
+
+    function onMouseOutHandler() {
+      alert("onMouseOut event triggered");
+    }
+
+    function onChangeHandler() {
+      alert("onChange event triggered");
+    }
+
+    function onKeyDownHandler(event) {
+      alert("onKeyDown event triggered: Key code - " + event.keyCode);
+    }
+    document.getElementById("clickButton").addEventListener("click", onClickHandler);
+    document.getElementById("mouseOverDiv").addEventListener("mouseover", onMouseOverHandler);
+    document.getElementById("mouseOutDiv").addEventListener("mouseout", onMouseOutHandler);
+    document.getElementById("changeInput").addEventListener("change", onChangeHandler);
+    document.getElementById("keyDownInput").addEventListener("keydown", onKeyDownHandler);
+  </script>
+</body>
+</html>
+

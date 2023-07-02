@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sort String Alphabetically</title>
+</head>
+<body>
+  <input type="text" id="inputString">
+  <button id="sortButton">Sort</button>
+ 
+
+  <script>
+    
+function Sortstr(){
+  var input= document.getElementById("inputString").value;
+  var SortedStr=input.split('').sort().join('');
+  alert("Sorted string: "+SortedStr);
+}
+document.getElementById("sortButton").addEventListener('click',Sortstr);
+  </script>
+</body>
+</html>
