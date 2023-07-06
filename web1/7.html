@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function binarySearch(arr, target) {
+            var low = 0;
+            var high = arr.length - 1;
+
+            while (low <= high) {
+                var mid = Math.floor((low + high) / 2);
+
+                if (arr[mid] === target) {
+                    return mid; // Element found, return its index
+                } else if (arr[mid] < target) {
+                    low = mid + 1; // Search in the right half of the array
+                } else {
+                    high = mid - 1; // Search in the left half of the array
+                }
+            }
+
+            return -1; // Element not found
+        }
+
+        // Prompt the user to enter the array elements
+        var inputArray = [];
+        var numElements = parseInt(prompt("Enter the number of elements in the array:"));
+
+        for (var i = 0; i < numElements; i++) {
+            var element = parseInt(prompt("Enter element " + (i + 1) + ":"));
+            inputArray.push(element);
+        }
+
+        // Prompt the user to enter the element to search
+        var targetElement = parseInt(prompt("Enter the element to search:"));
+
+        // Perform binary search on the array
+        var result = binarySearch(inputArray, targetElement);
+
+        // Display the result
+        if (result !== -1) {
+            alert("Element found at index " + result);
+        } else {
+            alert("Element not found");
+        }
+    </script>
+</body>
+
+</html>
